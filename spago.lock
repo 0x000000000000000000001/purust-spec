@@ -756,6 +756,9 @@
       "aff": {
         "path": "../purust-aff"
       },
+      "arraybuffer-types": {
+        "path": "../purust-arraybuffer-types"
+      },
       "arrays": {
         "path": "../purust-arrays"
       },
@@ -798,6 +801,9 @@
       "integers": {
         "path": "../purust-integers"
       },
+      "js-date": {
+        "path": "../purust-js-date"
+      },
       "js-promise": {
         "path": "../purust-js-promise"
       },
@@ -810,6 +816,12 @@
       "lazy": {
         "path": "../purust-lazy"
       },
+      "node-buffer": {
+        "path": "../purust-node-buffer"
+      },
+      "node-child-process": {
+        "path": "../purust-node-child-process"
+      },
       "node-event-emitter": {
         "path": "../purust-node-event-emitter"
       },
@@ -821,6 +833,9 @@
       },
       "node-net": {
         "path": "../purust-node-net"
+      },
+      "node-os": {
+        "path": "../purust-node-os"
       },
       "node-path": {
         "path": "../purust-node-path"
@@ -969,9 +984,8 @@
       ]
     },
     "arraybuffer-types": {
-      "type": "registry",
-      "version": "3.0.2",
-      "integrity": "sha256-p05cJnSkyeoB7VHzMyc2Eb1RwUaB7Nl0sQSqEGNEUD8=",
+      "type": "local",
+      "path": "../purust-arraybuffer-types",
       "dependencies": []
     },
     "arrays": {
@@ -1339,9 +1353,8 @@
       ]
     },
     "js-date": {
-      "type": "registry",
-      "version": "8.0.0",
-      "integrity": "sha256-DNQrp4xYc8o80jtxo0aOkUeXGi6h0Xidkk2ZQ8Y4l5Y=",
+      "type": "local",
+      "path": "../purust-js-date",
       "dependencies": [
         "datetime",
         "effect",
@@ -1419,27 +1432,23 @@
       ]
     },
     "node-buffer": {
-      "type": "registry",
-      "version": "9.0.0",
-      "integrity": "sha256-RdQjilmEHqsT4fwpCr8Mavw8KTafYrS3ZM6zeAAVAl8=",
+      "type": "local",
+      "path": "../purust-node-buffer",
       "dependencies": [
         "arraybuffer-types",
         "effect",
-        "functions",
         "maybe",
         "nullable",
-        "partial",
-        "prelude",
         "st",
         "unsafe-coerce"
       ]
     },
     "node-child-process": {
-      "type": "registry",
-      "version": "11.1.0",
-      "integrity": "sha256-Um7g75gXKEX51ZlviJWocTjUENUW1qHgqGqhYKkka74=",
+      "type": "local",
+      "path": "../purust-node-child-process",
       "dependencies": [
         "aff",
+        "arrays",
         "datetime",
         "effect",
         "either",
@@ -1460,6 +1469,7 @@
         "prelude",
         "refs",
         "safe-coerce",
+        "strings",
         "unsafe-coerce"
       ]
     },
@@ -1501,20 +1511,17 @@
       ]
     },
     "node-os": {
-      "type": "registry",
-      "version": "5.1.0",
-      "integrity": "sha256-UtQiPiZy5ouV832ubww/U8KlpVYny9xsW8WWfYOEgtA=",
+      "type": "local",
+      "path": "../purust-node-os",
       "dependencies": [
         "arrays",
         "bifunctors",
-        "control",
         "datetime",
         "effect",
         "either",
         "exceptions",
         "foreign",
         "foreign-object",
-        "functions",
         "maybe",
         "node-buffer",
         "nullable",

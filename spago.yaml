@@ -57,6 +57,22 @@ workspace:
   packageSet:
     registry: 77.7.0
   extraPackages:
+    node-os:
+      path: "../purust-node-os"
+    node-child-process:
+      path: "../purust-node-child-process"
+    node-event-emitter:
+      path: "../purust-node-event-emitter"
+    node-net:
+      path: "../purust-node-net"
+    node-streams:
+      path: "../purust-node-streams"
+    arraybuffer-types:
+      path: "../purust-arraybuffer-types"
+    js-date:
+      path: "../purust-js-date"
+    node-buffer:
+      path: "../purust-node-buffer"
     aff:
       path: "../purust-aff"
     arrays:
@@ -95,14 +111,10 @@ workspace:
       path: "../purust-js-uri"
     lazy:
       path: "../purust-lazy"
-    node-event-emitter:
-      path: "../purust-node-event-emitter"
     node-fs:
       path: "../purust-node-fs"
     node-http:
       path: "../purust-node-http"
-    node-net:
-      path: "../purust-node-net"
     node-path:
       path: "../purust-node-path"
     node-process:
@@ -111,8 +123,6 @@ workspace:
       path: "../purust-spec-discovery"
     spec-node:
       path: "../purust-spec-node"
-    node-streams:
-      path: "../purust-node-streams"
     now:
       path: "../purust-now"
     nullable:
