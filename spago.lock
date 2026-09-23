@@ -107,7 +107,7 @@
     },
     "package_set": {
       "address": {
-        "registry": "75.0.0"
+        "registry": "77.7.0"
       },
       "compiler": ">=0.15.15 <0.16.0",
       "content": {
@@ -145,7 +145,7 @@
         "assert-multiple": "0.4.0",
         "avar": "5.0.1",
         "axon": "0.0.3",
-        "b64": "0.0.8",
+        "b64": "0.0.9",
         "barbies": "1.0.1",
         "barlow-lens": "0.9.0",
         "benchlib": "0.0.4",
@@ -180,6 +180,7 @@
         "codec-argonaut": "10.0.0",
         "codec-json": "2.0.0",
         "colors": "7.0.1",
+        "compile-fail": "0.4.0",
         "concur-core": "0.5.0",
         "concur-react": "0.5.0",
         "concurrent-queues": "3.0.0",
@@ -224,7 +225,7 @@
         "elmish-testing-library": "0.3.2",
         "elmish-time-machine": "0.4.2",
         "email-validate": "7.0.0",
-        "encoding": "0.0.9",
+        "encoding": "0.0.10",
         "enums": "6.0.1",
         "env-names": "0.4.0",
         "environment": "2.0.0",
@@ -317,19 +318,19 @@
         "humdrum": "0.0.1",
         "hylograph-canvas": "0.1.0",
         "hylograph-d3-kernel": "0.1.0",
-        "hylograph-graph": "0.2.0",
-        "hylograph-layout": "0.2.0",
-        "hylograph-music": "0.1.0",
+        "hylograph-graph": "0.3.0",
+        "hylograph-layout": "0.3.0",
+        "hylograph-music": "0.4.0",
         "hylograph-optics": "0.1.0",
-        "hylograph-selection": "0.1.1",
-        "hylograph-simulation": "0.3.0",
+        "hylograph-selection": "0.5.1",
+        "hylograph-simulation": "0.5.0",
         "hylograph-simulation-core": "0.1.0",
-        "hylograph-simulation-halogen": "0.3.0",
+        "hylograph-simulation-halogen": "0.5.0",
         "hylograph-transitions": "0.1.0",
         "hylograph-wasm-kernel": "0.1.0",
         "hyrule": "2.3.8",
         "i18next": "0.1.0",
-        "idb": "0.1.0",
+        "idb": "0.2.0",
         "identity": "6.0.0",
         "identy": "4.0.1",
         "indexed-db": "1.0.0",
@@ -355,10 +356,11 @@
         "js-maps": "0.1.2",
         "js-promise": "1.0.0",
         "js-promise-aff": "1.0.0",
-        "js-temporal": "2.1.0",
+        "js-temporal": "3.0.0",
         "js-timers": "6.1.0",
         "js-uri": "3.1.0",
         "jsdom": "1.0.0",
+        "jsinc": "0.5.1",
         "json": "1.1.0",
         "json-codecs": "5.0.0",
         "justifill": "0.5.0",
@@ -372,6 +374,7 @@
         "leveldb": "1.0.1",
         "liminal": "1.0.1",
         "linalg": "6.0.0",
+        "linear": "0.1.0",
         "lists": "7.0.0",
         "literals": "1.0.2",
         "logging": "3.0.0",
@@ -402,6 +405,7 @@
         "monoidal": "0.16.0",
         "morello": "0.4.0",
         "mote": "3.0.0",
+        "motion": "4.0.0",
         "motsunabe": "2.0.0",
         "mvc": "0.0.1",
         "mysql": "6.0.1",
@@ -490,6 +494,7 @@
         "profunctor-lenses": "8.0.0",
         "prospero": "0.1.0",
         "protobuf": "4.4.0",
+        "ps-spa": "0.7.1",
         "psa-utils": "8.0.0",
         "psci-support": "6.0.0",
         "punycode": "1.0.0",
@@ -511,7 +516,7 @@
         "react-basic-dom": "7.0.0",
         "react-basic-dom-beta": "0.1.1",
         "react-basic-emotion": "7.1.0",
-        "react-basic-hooks": "9.0.0",
+        "react-basic-hooks": "9.1.1",
         "react-basic-storybook": "2.0.0",
         "react-dnd-kit": "0.6.0",
         "react-dom": "8.0.0",
@@ -553,6 +558,7 @@
         "semirings": "7.0.0",
         "shuffle": "2.0.0",
         "sigil": "0.3.0",
+        "sigil-hats": "0.3.0",
         "signal": "13.0.0",
         "simple-emitter": "3.0.1",
         "simple-i18n": "2.0.1",
@@ -566,7 +572,7 @@
         "soundfonts": "4.1.0",
         "sparse-matrices": "2.0.1",
         "sparse-polynomials": "3.0.1",
-        "spec": "8.1.1",
+        "spec": "8.1.2",
         "spec-discovery": "8.4.1",
         "spec-mocha": "5.1.1",
         "spec-node": "0.0.3",
@@ -580,15 +586,16 @@
         "string-parsers": "8.0.0",
         "strings": "6.0.1",
         "strings-extra": "4.0.0",
-        "stringutils": "0.0.12",
+        "stringutils": "0.0.13",
         "structured-logging": "1.0.0",
         "substitute": "0.2.3",
+        "supabase": "0.1.0",
         "supply": "0.2.0",
         "svg-parser": "3.0.0",
         "systemd-journald": "0.3.0",
         "tagged": "4.0.2",
         "tailrec": "6.1.0",
-        "tanstack-query": "2.0.1",
+        "tanstack-query": "3.0.0",
         "tecton": "0.2.1",
         "tecton-halogen": "0.2.0",
         "temporal": "0.1.0",
@@ -647,6 +654,8 @@
         "versions": "7.0.0",
         "visx": "0.0.2",
         "vitest": "2.0.0",
+        "wasm-base": "0.1.1",
+        "web-chain": "1.0.1",
         "web-clipboard": "6.0.0",
         "web-cssom": "2.0.0",
         "web-cssom-view": "0.1.0",
@@ -694,7 +703,7 @@
         "webextension-polyfill": "0.1.0",
         "webgpu": "0.0.1",
         "which": "2.0.0",
-        "whine-core": "0.0.33",
+        "whine-core": "0.0.34",
         "xterm": "1.0.0",
         "yaml-next": "3.1.1",
         "yoga-acp-om": "0.1.1",
@@ -706,19 +715,21 @@
         "yoga-dynamodb": "0.1.1",
         "yoga-elasticsearch": "0.1.1",
         "yoga-fastify": "0.5.1",
-        "yoga-fastify-om": "0.4.1",
+        "yoga-fastify-om": "0.4.4",
         "yoga-fetch": "1.0.1",
-        "yoga-fetch-om": "0.6.2",
+        "yoga-fetch-om": "0.6.3",
+        "yoga-format": "1.0.0",
+        "yoga-heroui": "2.0.2",
         "yoga-http-api": "0.3.1",
         "yoga-jaeger": "0.1.1",
         "yoga-json": "5.2.1",
         "yoga-language": "1.0.0",
         "yoga-next-fastify": "0.1.1",
-        "yoga-om": "2.0.0",
-        "yoga-om-layer": "2.0.0",
+        "yoga-om": "2.2.0",
+        "yoga-om-layer": "2.1.0",
         "yoga-om-strom": "0.4.2",
         "yoga-om-workerbees": "0.1.2",
-        "yoga-opentelemetry": "0.1.1",
+        "yoga-opentelemetry": "0.2.0",
         "yoga-options": "0.1.1",
         "yoga-pino": "0.1.1",
         "yoga-postgres": "6.0.0",
@@ -729,7 +740,7 @@
         "yoga-redis": "0.1.0",
         "yoga-shadcn": "1.0.5",
         "yoga-sql-types": "0.1.0",
-        "yoga-sqlite": "0.3.0",
+        "yoga-sqlite": "0.3.2",
         "yoga-sse": "0.1.1",
         "yoga-subtlecrypto": "0.1.0",
         "yoga-test-docker": "0.1.2",
@@ -741,25 +752,166 @@
         "zipperarray": "2.0.0"
       }
     },
-    "extra_packages": {}
+    "extra_packages": {
+      "aff": {
+        "path": "../purust-aff"
+      },
+      "arrays": {
+        "path": "../purust-arrays"
+      },
+      "assert": {
+        "path": "../purust-assert"
+      },
+      "avar": {
+        "path": "../purust-avar"
+      },
+      "catenable-lists": {
+        "path": "../purust-catenable-lists"
+      },
+      "console": {
+        "path": "../purust-console"
+      },
+      "datetime": {
+        "path": "../purust-datetime"
+      },
+      "effect": {
+        "path": "../purust-effect"
+      },
+      "enums": {
+        "path": "../purust-enums"
+      },
+      "exceptions": {
+        "path": "../purust-exceptions"
+      },
+      "foldable-traversable": {
+        "path": "../purust-foldable-traversable"
+      },
+      "foreign": {
+        "path": "../purust-foreign"
+      },
+      "foreign-object": {
+        "path": "../purust-foreign-object"
+      },
+      "functions": {
+        "path": "../purust-functions"
+      },
+      "integers": {
+        "path": "../purust-integers"
+      },
+      "js-promise": {
+        "path": "../purust-js-promise"
+      },
+      "js-promise-aff": {
+        "path": "../purust-js-promise-aff"
+      },
+      "js-uri": {
+        "path": "../purust-js-uri"
+      },
+      "lazy": {
+        "path": "../purust-lazy"
+      },
+      "node-event-emitter": {
+        "path": "../purust-node-event-emitter"
+      },
+      "node-fs": {
+        "path": "../purust-node-fs"
+      },
+      "node-http": {
+        "path": "../purust-node-http"
+      },
+      "node-net": {
+        "path": "../purust-node-net"
+      },
+      "node-path": {
+        "path": "../purust-node-path"
+      },
+      "node-process": {
+        "path": "../purust-node-process"
+      },
+      "node-streams": {
+        "path": "../purust-node-streams"
+      },
+      "now": {
+        "path": "../purust-now"
+      },
+      "nullable": {
+        "path": "../purust-nullable"
+      },
+      "numbers": {
+        "path": "../purust-numbers"
+      },
+      "partial": {
+        "path": "../purust-partial"
+      },
+      "prelude": {
+        "path": "../purust-prelude"
+      },
+      "random": {
+        "path": "../purust-random"
+      },
+      "record": {
+        "path": "../purust-record"
+      },
+      "refs": {
+        "path": "../purust-refs"
+      },
+      "run": {
+        "path": "../purust-run"
+      },
+      "simple-json": {
+        "path": "../purust-simple-json"
+      },
+      "spec-discovery": {
+        "path": "../purust-spec-discovery"
+      },
+      "spec-node": {
+        "path": "../purust-spec-node"
+      },
+      "st": {
+        "path": "../purust-st"
+      },
+      "strings": {
+        "path": "../purust-strings"
+      },
+      "test": {
+        "path": "../purust-test"
+      },
+      "unfoldable": {
+        "path": "../purust-unfoldable"
+      },
+      "unsafe-coerce": {
+        "path": "../purust-unsafe-coerce"
+      },
+      "uuid": {
+        "path": "../purust-uuid"
+      },
+      "variant": {
+        "path": "../purust-variant"
+      },
+      "yoga-json": {
+        "path": "../purust-yoga-json"
+      }
+    }
   },
   "packages": {
     "aff": {
-      "type": "registry",
-      "version": "8.0.0",
-      "integrity": "sha256-9BRIrSdRoYybfiUmBqgKJ66cPqxYHb277bVWQMn/9sg=",
+      "type": "local",
+      "path": "../purust-aff",
       "dependencies": [
+        "arrays",
+        "bifunctors",
         "control",
         "datetime",
         "effect",
         "either",
         "exceptions",
+        "foldable-traversable",
         "functions",
+        "maybe",
         "newtype",
         "parallel",
-        "partial",
         "prelude",
-        "st",
+        "refs",
         "tailrec",
         "transformers",
         "unsafe-coerce"
@@ -823,9 +975,8 @@
       "dependencies": []
     },
     "arrays": {
-      "type": "registry",
-      "version": "7.3.0",
-      "integrity": "sha256-GD4z7LCi9wzi7FCQqbWhvs8paoUK9NO+HwgXZ+KP8Rk=",
+      "type": "local",
+      "path": "../purust-arrays",
       "dependencies": [
         "bifunctors",
         "control",
@@ -843,18 +994,25 @@
         "unsafe-coerce"
       ]
     },
+    "assert": {
+      "type": "local",
+      "path": "../purust-assert",
+      "dependencies": [
+        "console",
+        "effect",
+        "prelude"
+      ]
+    },
     "avar": {
-      "type": "registry",
-      "version": "5.0.1",
-      "integrity": "sha256-8V4SxF4TIWZ9Ik1P4lPzIRUAZeFBe8w5WA2VcCEKsIk=",
+      "type": "local",
+      "path": "../purust-avar",
       "dependencies": [
         "aff",
         "effect",
         "either",
         "exceptions",
         "functions",
-        "maybe",
-        "prelude"
+        "maybe"
       ]
     },
     "bifunctors": {
@@ -870,9 +1028,8 @@
       ]
     },
     "catenable-lists": {
-      "type": "registry",
-      "version": "7.0.0",
-      "integrity": "sha256-7+i/MHBLIRh604iCNT4ENWRWE/wuHIotER4kpdX9Ve0=",
+      "type": "local",
+      "path": "../purust-catenable-lists",
       "dependencies": [
         "control",
         "foldable-traversable",
@@ -884,9 +1041,8 @@
       ]
     },
     "console": {
-      "type": "registry",
-      "version": "6.1.0",
-      "integrity": "sha256-3T5PPz1mATZmV0C4GzkCkpLlCa5xG7u8ZNgnLrrrI1Q=",
+      "type": "local",
+      "path": "../purust-console",
       "dependencies": [
         "effect",
         "prelude"
@@ -924,9 +1080,8 @@
       ]
     },
     "datetime": {
-      "type": "registry",
-      "version": "6.1.0",
-      "integrity": "sha256-tbv6eDXy6QOD7YSknxYSbsDF32OC2JrNbSBpzMs7Doc=",
+      "type": "local",
+      "path": "../purust-datetime",
       "dependencies": [
         "bifunctors",
         "control",
@@ -968,9 +1123,8 @@
       ]
     },
     "effect": {
-      "type": "registry",
-      "version": "4.0.0",
-      "integrity": "sha256-DdqU3bncRTjgMVPPRlAuGHVeajSPEcRaRhNuio7if6s=",
+      "type": "local",
+      "path": "../purust-effect",
       "dependencies": [
         "prelude"
       ]
@@ -987,9 +1141,8 @@
       ]
     },
     "enums": {
-      "type": "registry",
-      "version": "6.0.1",
-      "integrity": "sha256-sdZOmLX5+5pASGpvVyT0vSD5BBYQjZiayjV5XiPutso=",
+      "type": "local",
+      "path": "../purust-enums",
       "dependencies": [
         "control",
         "either",
@@ -1004,9 +1157,8 @@
       ]
     },
     "exceptions": {
-      "type": "registry",
-      "version": "6.1.0",
-      "integrity": "sha256-nRrr+N0wk0TUFOWLR7e1n1oxcXo/X345bQUtoY9lW6A=",
+      "type": "local",
+      "path": "../purust-exceptions",
       "dependencies": [
         "effect",
         "either",
@@ -1033,9 +1185,8 @@
       ]
     },
     "foldable-traversable": {
-      "type": "registry",
-      "version": "6.0.0",
-      "integrity": "sha256-NGGWyCio/xjce6fPP7y3wwg7CheqllID6aJudDxbWhA=",
+      "type": "local",
+      "path": "../purust-foldable-traversable",
       "dependencies": [
         "bifunctors",
         "const",
@@ -1051,25 +1202,23 @@
       ]
     },
     "foreign": {
-      "type": "registry",
-      "version": "7.0.0",
-      "integrity": "sha256-jiDRMVQfovGsbbA/FzbzYf6iWk9i2b5gNrIjz+gFfsI=",
+      "type": "local",
+      "path": "../purust-foreign",
       "dependencies": [
         "either",
         "functions",
+        "identity",
         "integers",
         "lists",
         "maybe",
         "prelude",
         "strings",
-        "transformers",
-        "unsafe-coerce"
+        "transformers"
       ]
     },
     "foreign-object": {
-      "type": "registry",
-      "version": "4.1.0",
-      "integrity": "sha256-x/Q7r80z/vmHRKvPwhYmHP/DnJciPtsyGfRTMzayKIU=",
+      "type": "local",
+      "path": "../purust-foreign-object",
       "dependencies": [
         "arrays",
         "foldable-traversable",
@@ -1082,8 +1231,7 @@
         "tailrec",
         "tuples",
         "typelevel-prelude",
-        "unfoldable",
-        "unsafe-coerce"
+        "unfoldable"
       ]
     },
     "fork": {
@@ -1118,9 +1266,8 @@
       ]
     },
     "functions": {
-      "type": "registry",
-      "version": "6.0.0",
-      "integrity": "sha256-0jgtOr+SFO4UScKc40oA/9Vdcf2rLn3h3vZlY0KfqVo=",
+      "type": "local",
+      "path": "../purust-functions",
       "dependencies": [
         "prelude"
       ]
@@ -1174,9 +1321,8 @@
       ]
     },
     "integers": {
-      "type": "registry",
-      "version": "6.0.0",
-      "integrity": "sha256-Y8yozC1uHRLcruobEyv5/bMKzE1BoKJ/olHv6o+bgm8=",
+      "type": "local",
+      "path": "../purust-integers",
       "dependencies": [
         "maybe",
         "numbers",
@@ -1208,13 +1354,11 @@
       ]
     },
     "lazy": {
-      "type": "registry",
-      "version": "6.0.0",
-      "integrity": "sha256-MHRC+1Pc+AjortBp4b/e1e6KpEpsDwaJBNBB7TOL+1I=",
+      "type": "local",
+      "path": "../purust-lazy",
       "dependencies": [
         "control",
         "foldable-traversable",
-        "invariant",
         "prelude"
       ]
     },
@@ -1320,9 +1464,8 @@
       ]
     },
     "node-event-emitter": {
-      "type": "registry",
-      "version": "3.0.0",
-      "integrity": "sha256-wodx71NxJBPXOaawFn01V1ByYB2vT+I3RuV2giOVKMg=",
+      "type": "local",
+      "path": "../purust-node-event-emitter",
       "dependencies": [
         "effect",
         "either",
@@ -1334,9 +1477,8 @@
       ]
     },
     "node-fs": {
-      "type": "registry",
-      "version": "9.2.0",
-      "integrity": "sha256-fxioTSm9y47WuYs9F/7nxCh/RVDCl3Kr3Hg779J4SJA=",
+      "type": "local",
+      "path": "../purust-node-fs",
       "dependencies": [
         "aff",
         "datetime",
@@ -1354,7 +1496,8 @@
         "nullable",
         "partial",
         "prelude",
-        "strings"
+        "strings",
+        "unsafe-coerce"
       ]
     },
     "node-os": {
@@ -1382,35 +1525,32 @@
       ]
     },
     "node-path": {
-      "type": "registry",
-      "version": "5.0.1",
-      "integrity": "sha256-j7n/SmpVz0FOMJl4XZop3ofJ+MeIPkMNqUEUKHEL6Us=",
+      "type": "local",
+      "path": "../purust-node-path",
       "dependencies": [
-        "effect"
+        "console",
+        "effect",
+        "prelude"
       ]
     },
     "node-process": {
-      "type": "registry",
-      "version": "11.2.0",
-      "integrity": "sha256-onzKeNmaeYfN3HSDPqSFTrrP2Yl9tnVsfKKhnf2plxM=",
+      "type": "local",
+      "path": "../purust-node-process",
       "dependencies": [
         "effect",
-        "exceptions",
         "foreign",
         "foreign-object",
         "maybe",
         "node-event-emitter",
         "node-streams",
-        "nullable",
         "posix-types",
         "prelude",
-        "strings"
+        "unsafe-coerce"
       ]
     },
     "node-streams": {
-      "type": "registry",
-      "version": "9.0.1",
-      "integrity": "sha256-yuVGm/R/tBr4Nphi+a1a984Z0fkmN9Q5wWtSmbmJTpA=",
+      "type": "local",
+      "path": "../purust-node-streams",
       "dependencies": [
         "aff",
         "arrays",
@@ -1442,33 +1582,31 @@
       ]
     },
     "now": {
-      "type": "registry",
-      "version": "6.0.0",
-      "integrity": "sha256-mTyG4s8tps3XIf0jjV/lME2/QlwMzrQly2wqfSSUM3o=",
+      "type": "local",
+      "path": "../purust-now",
       "dependencies": [
         "datetime",
-        "effect",
-        "prelude"
+        "effect"
       ]
     },
     "nullable": {
-      "type": "registry",
-      "version": "6.0.0",
-      "integrity": "sha256-CDAZk+L9Sc0GCFTkE8n+qdp4Ys8avvnkU+m2hVALt7M=",
+      "type": "local",
+      "path": "../purust-nullable",
       "dependencies": [
+        "assert",
+        "effect",
+        "foreign",
         "functions",
         "maybe",
         "prelude"
       ]
     },
     "numbers": {
-      "type": "registry",
-      "version": "9.0.1",
-      "integrity": "sha256-ZydYckgwRAnRaFC7pu6fADhzdwX+UqHZrfJyet64zls=",
+      "type": "local",
+      "path": "../purust-numbers",
       "dependencies": [
         "functions",
-        "maybe",
-        "prelude"
+        "maybe"
       ]
     },
     "open-memoize": {
@@ -1570,9 +1708,8 @@
       ]
     },
     "partial": {
-      "type": "registry",
-      "version": "4.0.0",
-      "integrity": "sha256-mdrlJBAgFMh79hNRW39uv7c+BwnnaOrAMmdh7+VhEhs=",
+      "type": "local",
+      "path": "../purust-partial",
       "dependencies": []
     },
     "pipes": {
@@ -1607,9 +1744,8 @@
       ]
     },
     "prelude": {
-      "type": "registry",
-      "version": "6.0.2",
-      "integrity": "sha256-IqykrDRquGUD/LRSad7y75hZv3bUsGQ4knc8tdez8Qw=",
+      "type": "local",
+      "path": "../purust-prelude",
       "dependencies": []
     },
     "profunctor": {
@@ -1628,9 +1764,8 @@
       ]
     },
     "record": {
-      "type": "registry",
-      "version": "4.0.0",
-      "integrity": "sha256-WQ8fqp4X1wTA70J4qUcPW4Z7DCwx6e5KJnT/EuTdWSc=",
+      "type": "local",
+      "path": "../purust-record",
       "dependencies": [
         "functions",
         "prelude",
@@ -1638,9 +1773,8 @@
       ]
     },
     "refs": {
-      "type": "registry",
-      "version": "6.0.0",
-      "integrity": "sha256-KKD5G9dR2SauuDGULUJsxjqDOEi1Jqm+2Sq5U2mY8YU=",
+      "type": "local",
+      "path": "../purust-refs",
       "dependencies": [
         "effect",
         "prelude"
@@ -1655,9 +1789,8 @@
       ]
     },
     "spec-node": {
-      "type": "registry",
-      "version": "0.0.3",
-      "integrity": "sha256-8/9+g0obbamV0YtqzmttbWs8HaWF7CEeW+eDtqzuAAo=",
+      "type": "local",
+      "path": "../purust-spec-node",
       "dependencies": [
         "aff",
         "argonaut-codecs",
@@ -1687,11 +1820,9 @@
       ]
     },
     "st": {
-      "type": "registry",
-      "version": "6.2.0",
-      "integrity": "sha256-WI4MEkkwUd4pnwZQ3G8VKWgX5t1RSNJludm5e9boaRo=",
+      "type": "local",
+      "path": "../purust-st",
       "dependencies": [
-        "effect",
         "partial",
         "prelude",
         "tailrec",
@@ -1699,9 +1830,8 @@
       ]
     },
     "strings": {
-      "type": "registry",
-      "version": "6.0.1",
-      "integrity": "sha256-FNto2hoNW5Da6W6crIk77YXMagBvOGHZE1kO7eZ1vLM=",
+      "type": "local",
+      "path": "../purust-strings",
       "dependencies": [
         "arrays",
         "control",
@@ -1784,9 +1914,8 @@
       ]
     },
     "unfoldable": {
-      "type": "registry",
-      "version": "6.0.0",
-      "integrity": "sha256-BK/6By1sKp/ztk+9CF3q43SV0QDTLVdsGqFerKHSmbg=",
+      "type": "local",
+      "path": "../purust-unfoldable",
       "dependencies": [
         "foldable-traversable",
         "maybe",
@@ -1796,9 +1925,8 @@
       ]
     },
     "unsafe-coerce": {
-      "type": "registry",
-      "version": "6.0.0",
-      "integrity": "sha256-0L1QsaY20OILjfU5TV72d3U/tSjhmL9hJ32WMp857Lk=",
+      "type": "local",
+      "path": "../purust-unsafe-coerce",
       "dependencies": []
     }
   }
