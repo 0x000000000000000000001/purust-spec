@@ -23,10 +23,15 @@ import Test.Spec.RunnerSpec (runnerSpec)
 main :: Effect Unit
 main = launchAff_ do
   config <- liftEffect $
-    Config.fromCommandLine' defaultConfig (Config.commandLineOptionParsers <> [debug, accept])
+    Config.fromCommandLine' defaultConfig (Config.commandLineOptionParsers <> [debug, accept, integrationFlag])
     <#> _ { timeout = Just $ Milliseconds 30000.0 }
+  -- The integration suite shells out to `npm`/`npx`/`spago` in a temporary
+  -- environment. The native port cannot run that toolchain, so it is opt-in.
   integration <-
-    integrationSpecs { debug: config.debug, accept: config.accept }
+    if config.integration then
+      integrationSpecs { debug: config.debug, accept: config.accept }
+    else
+      pure (pure unit)
   liftEffect $
     runSpecAndExitProcess'
       { defaultConfig: config
@@ -43,10 +48,10 @@ main = launchAff_ do
       parallelSpec
       teamcitySpec
 
-type Config = Config.TestRunConfig' (debug :: Boolean, accept :: Boolean)
+type Config = Config.TestRunConfig' (debug :: Boolean, accept :: Boolean, integration :: Boolean)
 
 defaultConfig :: Config
-defaultConfig = Config.defaultConfig `merge` { debug: false, accept: false }
+defaultConfig = Config.defaultConfig `merge` { debug: false, accept: false, integration: false }
 
 debug :: Config.OptionParser Config
 debug = ado
@@ -65,3 +70,12 @@ accept = ado
     ]
 
   in _ { accept = a }
+
+integrationFlag :: Config.OptionParser Config
+integrationFlag = ado
+  i <- Opt.switch $ fold
+    [ Opt.long "integration"
+    , Opt.help "Also run the integration tests (requires node, npm and npx)."
+    ]
+
+  in _ { integration = i }
