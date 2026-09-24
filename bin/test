@@ -3,10 +3,12 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 CLEAN=0
+WITH_INTEGRATION=1
 for arg in "$@"; do
   case "$arg" in
     -c|--clean) CLEAN=1 ;;
-    *) echo "Usage: bin/test [-c|--clean]" >&2; exit 2 ;;
+    --no-integration) WITH_INTEGRATION=0 ;;
+    *) echo "Usage: bin/test [-c|--clean] [--no-integration]" >&2; exit 2 ;;
   esac
 done
 
@@ -42,6 +44,8 @@ fi
 rm -rf output
 if [ "$CLEAN" = 1 ]; then
   rm -rf .spago .cache
+  # The integration project is rebuilt from scratch on a clean run.
+  rm -rf tmp/integration-env
 fi
 
 echo "=== Building TAST and generating Rust with spago ==="
@@ -74,4 +78,18 @@ if grep -qE '[0-9]+ failed' output/actual.stdout; then
   echo "[FAILED] the spec suite reported failures" >&2
   exit 1
 fi
-echo "Summary: the spec test suite passed."
+# The three inherited pending cases must stay visible in the report.
+pending="$(grep -oE '[0-9]+ pending' output/actual.stdout | tail -1 || true)"
+if [ "$pending" != "3 pending" ]; then
+  echo "[FAILED] expected the 3 inherited pending cases, got: ${pending:-none}" >&2
+  exit 1
+fi
+passing="$(grep -oE '[0-9]+ passing' output/actual.stdout | tail -1)"
+
+integration_note=""
+if [ "$WITH_INTEGRATION" = 1 ]; then
+  echo "=== Running the upstream integration cases natively ==="
+  ./bin/integration
+  integration_note=", 8/8 integration cases match the upstream goldens"
+fi
+echo "Summary: the spec test suite passed ($passing, $pending inherited${integration_note})."

@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+# Native equivalent of the upstream `integration-tests` runner: every case is
+# compiled with the purust backend in an isolated Spago project that points at
+# the port's packages, executed, and its (ANSI-stripped) output is compared to
+# the upstream golden file.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+COMPILER_DIR="$(cd ../purust && pwd)"
+SPAGO_BIN="$COMPILER_DIR/node_modules/.bin/spago"
+if [ ! -x "$SPAGO_BIN" ]; then
+  printf 'Missing Spago dependency. Run npm install in %s.\n' "$COMPILER_DIR" >&2
+  exit 1
+fi
+# Prefer the sibling TAST fork; PURS can select another build explicitly.
+if [ -n "${PURS:-}" ]; then
+  PURS_BIN="$(command -v "$PURS")"
+else
+  FORK_BUILDS=("$COMPILER_DIR"/../../purescript/.stack-work/dist/*/*/build/purs/purs)
+  if [ "${#FORK_BUILDS[@]}" = 1 ] && [ -x "${FORK_BUILDS[0]}" ]; then
+    PURS_BIN="${FORK_BUILDS[0]}"
+  else
+    PURS_BIN="$(command -v purs)"
+  fi
+fi
+export PATH="$(dirname "$PURS_BIN"):$COMPILER_DIR/node_modules/.bin:$PATH"
+
+# Kept outside `output/` so incremental builds survive the unit suite.
+ENV_DIR="tmp/integration-env"
+mkdir -p "$ENV_DIR/test"
+
+# The project mirrors the workspace overrides so every dependency resolves to
+# the ported package, exactly like the package's own test build.
+python3 - "$ENV_DIR" <<'PY'
+import sys
+env = sys.argv[1]
+src = open('spago.yaml', encoding='utf8').read()
+section = src[src.index('  extraPackages:') + len('  extraPackages:\n'):]
+section = section.replace('path: "../', 'path: "../../../')
+yaml = '''package:
+  name: integration-test
+  dependencies: ["aff", "effect", "maybe", "prelude", "spec", "spec-node"]
+  test:
+    main: Test.Main
+    dependencies: []
+
+workspace:
+  backend:
+    cmd: ../../../purust/bin/purust
+    args: [--main, Test.Main, --source, output, --out, output/purust_output, --threaded]
+  packageSet:
+    registry: 77.7.0
+  extraPackages:
+    spec:
+      path: "../../"
+''' + section
+open(env + '/spago.yaml', 'w', encoding='utf8').write(yaml)
+PY
+
+strip_ansi() {
+  perl -pe 's/\x1b\[[0-9;]*m//g'
+}
+
+normalize() {
+  # Trim trailing whitespace and drop trailing blank lines.
+  sed -e 's/[[:space:]]*$//' | sed -e :a -e '/^\n*$/{$d;N;};/\n$/ba'
+}
+
+failures=0
+total=0
+for case_dir in integration-tests/cases/*/; do
+  name="$(basename "$case_dir")"
+  total=$((total + 1))
+  cp "$case_dir/Main.purs" "$ENV_DIR/test/Main.purs"
+
+  if ! (cd "$ENV_DIR" && "$SPAGO_BIN" build) > "$ENV_DIR/build.log" 2>&1; then
+    echo "[FAILED] $name (build)" >&2
+    tail -20 "$ENV_DIR/build.log" >&2
+    failures=$((failures + 1))
+    continue
+  fi
+  if ! cargo build --manifest-path "$ENV_DIR/output/purust_output/Cargo.toml" \
+      > "$ENV_DIR/cargo.log" 2>&1; then
+    echo "[FAILED] $name (cargo)" >&2
+    tail -20 "$ENV_DIR/cargo.log" >&2
+    failures=$((failures + 1))
+    continue
+  fi
+
+  actual_file="$ENV_DIR/actual.txt"
+  stderr_file="$ENV_DIR/actual.stderr"
+  (cd "$ENV_DIR" && ./output/purust_output/target/debug/purust_output) \
+    > "$actual_file" 2> "$stderr_file" || true
+  strip_ansi < "$actual_file" | normalize > "$actual_file.norm"
+  normalize < "$case_dir/output.txt" > "$ENV_DIR/golden.norm"
+
+  if [ -s "$stderr_file" ]; then
+    echo "[FAILED] $name (output on stderr)" >&2
+    head -10 "$stderr_file" >&2
+    failures=$((failures + 1))
+    continue
+  fi
+  if ! diff -u "$ENV_DIR/golden.norm" "$actual_file.norm" > "$ENV_DIR/diff.txt"; then
+    echo "[FAILED] $name (output differs)" >&2
+    head -40 "$ENV_DIR/diff.txt" >&2
+    failures=$((failures + 1))
+    continue
+  fi
+  echo "[OK] $name"
+done
+
+if [ "$failures" -ne 0 ]; then
+  echo "[FAILED] $failures/$total integration cases differ (see $ENV_DIR)" >&2
+  exit 1
+fi
+echo "Summary: $total/$total integration cases match the upstream golden output."
