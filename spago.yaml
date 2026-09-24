@@ -69,6 +69,8 @@ workspace:
       path: "../purust-node-streams"
     arraybuffer-types:
       path: "../purust-arraybuffer-types"
+    js-bigints:
+      path: "../purust-js-bigints"
     js-date:
       path: "../purust-js-date"
     node-buffer:
