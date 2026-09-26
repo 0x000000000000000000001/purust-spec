@@ -20,6 +20,10 @@ fn render(value: &crate::UnknownType, depth: usize) -> String {
     if depth > 6 {
         return "\"...\"".to_owned();
     }
+    let value = match value.resolve() {
+        crate::Value::IntArray(_) => crate::Value::Array(value.unwrap_array()),
+        _ => value,
+    };
     match value.resolve() {
         crate::Value::String(text) => escape(text),
         crate::Value::Int(number) => number.to_string(),
