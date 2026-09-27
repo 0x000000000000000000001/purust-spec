@@ -16,11 +16,14 @@ main = launchAff_ $ runSpecPure' config [specReporter] do
   it "passes quickly" $
     5 `shouldEqual` (3 + 2)
 
+  -- Keep a wide margin between the timeout and the delayed test: with a tight
+  -- margin (10 ms vs 15 ms) any scheduling jitter under load lets the delayed
+  -- test win the race and the timeout never fires.
   it "times out" $
-    delay (Milliseconds 15.0)
+    delay (Milliseconds 500.0)
 
   it "shouldn't get to run" $
     2 `shouldEqual` 3
 
   where
-    config = defaultConfig { failFast = true, timeout = Just $ Milliseconds 10.0, exit = false }
+    config = defaultConfig { failFast = true, timeout = Just $ Milliseconds 50.0, exit = false }

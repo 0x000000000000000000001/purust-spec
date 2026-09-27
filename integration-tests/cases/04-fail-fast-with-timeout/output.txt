@@ -5,4 +5,4 @@
 1 failed
 
 1) times out
-  test timed out after 10ms
+  test timed out after 50ms

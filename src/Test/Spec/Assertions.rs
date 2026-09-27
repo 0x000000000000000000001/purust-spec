@@ -20,12 +20,18 @@ fn render(value: &crate::UnknownType, depth: usize) -> String {
     if depth > 6 {
         return "\"...\"".to_owned();
     }
-    let value = match value.resolve() {
-        crate::Value::IntArray(_) => crate::Value::Array(value.unwrap_array()),
-        _ => value,
+    // Unboxed Int arrays render like regular arrays. Resolve once and keep a
+    // reference so every branch below sees the same type.
+    let converted;
+    let resolved: &crate::Value = match value.resolve() {
+        crate::Value::IntArray(_) => {
+            converted = crate::Value::Array(value.unwrap_array());
+            &converted
+        }
+        other => other,
     };
-    match value.resolve() {
-        crate::Value::String(text) => escape(text),
+    match resolved {
+        crate::Value::String(text) => escape(text.as_str()),
         crate::Value::Int(number) => number.to_string(),
         crate::Value::Number(number) => number.to_string(),
         crate::Value::Bool(flag) => flag.to_string(),
@@ -37,7 +43,7 @@ fn render(value: &crate::UnknownType, depth: usize) -> String {
                 .collect();
             format!("[{}]", items.join(","))
         }
-        _ => match value.__purust_record_fields() {
+        _ => match resolved.__purust_record_fields() {
             Some(fields) => {
                 let items: Vec<String> = fields
                     .entries()
