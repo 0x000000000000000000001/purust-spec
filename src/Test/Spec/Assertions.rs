@@ -24,7 +24,7 @@ fn render(value: &crate::UnknownType, depth: usize) -> String {
     // reference so every branch below sees the same type.
     let converted;
     let resolved: &crate::Value = match value.resolve() {
-        crate::Value::IntArray(_) => {
+        crate::Value::IntArray(_) | crate::Value::NativeArray(_) => {
             converted = crate::Value::Array(value.unwrap_array());
             &converted
         }
